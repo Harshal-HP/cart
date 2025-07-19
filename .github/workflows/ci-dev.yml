@@ -1,10 +1,10 @@
-name: CICD - DEV
+name: CI - DEV
 on:
   push:
     branches:
       - 'ROBO-**'
 jobs:
   Build:
-    runs-on: self-hosted
-    steps:
-      - run: echo OK
+    uses: Harshal-HP/roboshop-github-actions/.github/workflows/ci-dev.yml@main
+    with:
+      appType: 'nodeJS'

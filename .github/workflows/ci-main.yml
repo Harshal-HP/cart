@@ -1,9 +1,11 @@
 name: CICD - MAIN
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     branches:
       - 'main'
 jobs:
-  ReUse:
+  Build:
     uses: Harshal-HP/roboshop-github-actions/.github/workflows/ci-main.yml@main
+    with:
+      appType: 'nodeJS'
