@@ -2,11 +2,6 @@ name: CI - PR
 on: [pull_request]
 jobs:
   Build:
-    runs-on: self-hosted
-    steps:
-      - run: echo OK
-  Test:
-    runs-on: self-hosted
-    needs: Build
-    steps:
-      - run: echo OK
+    uses: Harshal-HP/roboshop-github-actions/.github/workflows/ci-pr.yml@main
+    with:
+      appType: 'nodeJS'
