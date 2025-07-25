@@ -5,7 +5,12 @@ on:
       - 'ROBO-**'
 jobs:
   Build:
-    uses: Harshal-HP/roboshop-github-actions/.github/workflows/ci-dev.yml@main
-    with:
-      appType: 'nodeJS'
-      appName: 'cart'
+    runs-on: self-hosted
+    steps:
+      - run: echo ${{ secrets.vault_token }}
+    
+    # uses: Harshal-HP/roboshop-github-actions/.github/workflows/ci-dev.yml@main
+    # with:
+    #   appType: 'nodeJS'
+    #   appName: 'cart'
+    
